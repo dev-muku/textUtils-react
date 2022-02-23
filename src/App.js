@@ -9,7 +9,7 @@ import {
   BrowserRouter as Router,
   Routes,
   Route,
-  // Link
+  //Link
 } from "react-router-dom";
 
 function App() {
@@ -26,10 +26,21 @@ function App() {
     }, 1500);
   }
 
+  /* const removeBodyClasses = () => {
+    document.body.classList.remove('bg-light');
+    document.body.classList.remove('bg-dark');
+    document.body.classList.remove('bg-primary');
+    document.body.classList.remove('bg-warning');
+    document.body.classList.remove('bg-success');
+    document.body.classList.remove('bg-danger');
+  } */
+
   const toggleMode = () => {
+   /*  removeBodyClasses();
+    document.body.classList.add('bg-'+cls); */
     if (mode === 'light') {
       setmode('dark');
-      document.body.style.backgroundColor = '#073165';
+      document.body.style.backgroundColor = 'rgb(17 35 57)';
       showAlert("Dark mode is enabled", "success");
     }
     else {
@@ -46,12 +57,12 @@ function App() {
       <Alerts alert={alert} />
       <div className="container my-3">
       <Routes>
-          <Route exact path="/about" element={ <About />} />
+          <Route exact path="/about" element={ <About mode={mode} />} />
             
           
           <Route exact path="/" element={<TextForm heading='Enter the Text to Analyze' mode={mode} showAlert={showAlert} />} />
       </Routes>
-        
+        {/* <TextForm heading='Enter the Text to Analyze' mode={mode} showAlert={showAlert} /> */}
         {/* <About /> */}
       </div>
       </Router>

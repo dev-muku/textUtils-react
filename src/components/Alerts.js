@@ -6,8 +6,10 @@ function Alerts(props) {
     return typeTxt;
   };
   return (
-    props.alert && <div className={`alert alert-${props.alert.type}`} role="alert">
+    <div style={{height: '50px'}}>
+    {props.alert && <div className={`alert alert-${props.alert.type}`} role="alert">
         <strong>{capitalize(props.alert.type)} : {props.alert.msg}</strong>
+    </div>}
     </div>
   )
 }
